@@ -1,27 +1,52 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: (Center(
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        const Text('Dice game',
-            textDirection: TextDirection.ltr,
-            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-        const Text('Starting on 7th Feb',
-            textDirection: TextDirection.ltr,
-            style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic)),
-        const Text('First flutter project',
-            textDirection: TextDirection.ltr, style: TextStyle(fontSize: 20)),
-        ElevatedButton(
-          child: const Text("Let's Start"),
-          onPressed: () {
-
-          },
-        )
-      ],
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(primarySwatch: Colors.blue),
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text('Dice Roller'),
+      ),
+      body: (Center(
+        child: Column(
+          //mainAxisSize: MainAxisSize.min,
+          //mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Dice game',
+                textDirection: TextDirection.ltr,
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+            const Text('Starting on 7th Feb',
+                textDirection: TextDirection.ltr,
+                style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic)),
+            const Text('First flutter project',
+                textDirection: TextDirection.ltr,
+                style: TextStyle(fontSize: 20)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  child: const Text("Let's Start"),
+                  onPressed: () {},
+                ),
+                const SizedBox(width: 10,),
+                ElevatedButton(
+                  child: const Text('Rules'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            Image.network(
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSieM_5hyqA58GCwxdQQ9FMSMbiMyuMQZzuoa7GgIgh-rcoQKKqAoZna3mZw_gaXs-fkyc&usqp=CAU',
+              width: double.maxFinite,
+              height: 200,
+              fit: BoxFit.cover,
+            )
+          ],
+        ),
+      )),
     ),
-  )),));
+  ));
 }
 
 // class MyApp extends StatelessWidget {
